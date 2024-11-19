@@ -1,65 +1,38 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from "react";
 import NavLink from "./NavLink";
 
 interface NavigationProps {
-    activeSection: string;
-    setActiveSection: Dispatch<SetStateAction<string>>
+    showBg: boolean;
 }
 
 export default function Navigation({
-    activeSection,
-    setActiveSection
+    showBg,
 }: NavigationProps) {
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggleMenu = (section?:string|null) => {
+    const toggleMenu = () => {
         setIsOpen(!isOpen);
-        if(section) setActiveSection(section);
     };
 
     return (
-        <nav className='flex-col center h-16 md:fixed z-[100] md:bg-white/80 md:backdrop-blur-lg w-full'>
-            <div className="w-full space p-4  max-w-6xl mx-auto">
-                <div className="flex bg-white/80 mt-4 z-[101] md:mt-0 md:bg-white/0 p-2 md:!p-0 rounded-md backdrop-blur-lg md:backdrop-blur-none fixed md:relative items-center gap-2">
-                    <div className="rounded-lg size-8 bg-cyber-800"></div>
-                    <span className="font-bold">GolNFT</span>
+        <nav
+            className={`md:fixed w-full top-0 z-[100] ${showBg && 'bg-black/90 backdrop-blur-2xl'}`}>
+            <div className="w-full max-w-6xl mx-auto space p-4">
+                <div>
+                    <span className="font-bold text-lime-600 text-3xl">
+                        CRYETO
+                    </span>
                 </div>
 
-                <div className="md:flex hidden gap-4 items-center">
-                    <NavLink
-                        section="golnft"
-                        activeSection={activeSection}
-                        content="Explore"
-                        handleClick={() => setActiveSection('golnft')}
-                    />
-                    <NavLink
-                        section="creators"
-                        activeSection={activeSection}
-                        content="Creators"
-                        link="creators"
-                        handleClick={() => setActiveSection('creators')}
-                    />
-                    <NavLink
-                        section="collection"
-                        activeSection={activeSection}
-                        content="Collection"
-                        link="collection"
-                        handleClick={() => setActiveSection('collection')}
-                    />
-                    <NavLink
-                        section="automation"
-                        activeSection={activeSection}
-                        content="Automation"
-                        link="automation"
-                        handleClick={() => setActiveSection('automation')}
-                    />
+                <div className="md:flex hidden text-neutral-500 gap-4 items-center">
+                    <NavLink content="Explore" />
+                    <NavLink content="Creators" link="creators" />
+                    <NavLink content="Collection" link="collection" />
+                    <NavLink content="Automation" link="automation" />
                 </div>
                 <div className="md:block hidden">
-                    <a
-                        href=""
-                        className="rounded-full px-6 p-3 text-xs text-white bg-cyber-800"
-                    >
-                        Sign up
+                    <a className="rounded-lg px-4 p-2 text-sm text-black font-semibold bg-lime-400">
+                        Exlpore now
                     </a>
                 </div>
 
@@ -138,43 +111,26 @@ export default function Navigation({
             >
                 <div className="absolute z-10 mt-[25vh] text-center space-y-7 w-full">
                     <NavLink
-                        section="golnft"
                         className="text-4xl"
-                        activeSection={activeSection}
                         content="Explore"
-                        activeColor="text-white"
-                        inactiveColor="text-gray-300"
-                        handleClick={() => toggleMenu('golnft')}
+                        handleClick={toggleMenu}
                     />
                     <NavLink
-                        section="creators"
-                        activeSection={activeSection}
                         content="Creators"
                         className="text-4xl"
-                        activeColor="text-white"
-                        inactiveColor="text-gray-300"
                         link="creators"
-                        handleClick={() => toggleMenu('creators')}
+                        handleClick={toggleMenu}
                     />
                     <NavLink
-                        section="collection"
-                        activeSection={activeSection}
                         content="Collection"
-                        className="text-4xl"
-                        activeColor="text-white"
-                        inactiveColor="text-gray-300"
                         link="collection"
-                        handleClick={() => toggleMenu('collection')}
+                        handleClick={toggleMenu}
                     />
                     <NavLink
-                        section="automation"
-                        activeSection={activeSection}
                         content="Automation"
                         className="text-4xl"
-                        activeColor="text-white"
-                        inactiveColor="text-gray-300"
                         link="automation"
-                        handleClick={() => toggleMenu('automation')}
+                        handleClick={toggleMenu}
                     />
                 </div>
                 <div className="absolute size-full overflow-hidden">

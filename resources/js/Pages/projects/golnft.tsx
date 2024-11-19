@@ -15,7 +15,7 @@ export default function Main() {
     const creators = data.creators;
 
     return (
-        <div className="font-poppins  overflow-hidden">
+        <div className="font-poppins overflow-hidden bg-white">
             <Head title="GolNFT" />
             <Navigation
                 activeSection={activeSection}
@@ -27,15 +27,17 @@ export default function Main() {
                     onMouseEnter={() => {
                         setActiveSection("golnft");
                     }}
-                    className="h-[26rem] w-full bg-head-gradient md:bg-md-head-gradient relative text-center mt-10 md:mt-20"
+                    className="h-[26rem] w-full bg-golnft-gradient md:bg-md-golnft-gradient relative text-center mt-10 md:mt-20"
                 >
-                    <p className="text-4xl sm:text-5xl md:text-6xl font-semibold md:font-medium sm:max-w-[80%] lg:max-w-3xl mx-auto md:leading-[4rem] lg:leading-[4.5rem] text-cyber-800/95">
-                        Discover, Collect & Sell Creative NFTs
-                    </p>
-                    <p className="text-gray-500 text-sm md:text-base sm:max-w-[70%] lg:max-w-xl mt-8 mx-auto ">
-                        Golnft is a NFT market which is used by multiple
-                        websites to provide the users the best experience.
-                    </p>
+                    <div className="relative z-10">
+                        <p className="text-4xl sm:text-5xl md:text-6xl font-semibold md:font-medium sm:max-w-[80%] lg:max-w-3xl mx-auto md:leading-[4rem] lg:leading-[4.5rem] text-cyber-800/95">
+                            Discover, Collect & Sell Creative NFTs
+                        </p>
+                        <p className="text-gray-500 text-sm md:text-base sm:max-w-[70%] lg:max-w-xl mt-8 mx-auto ">
+                            Golnft is a NFT market which is used by multiple
+                            websites to provide the users the best experience.
+                        </p>
+                    </div>
 
                     <SparkEffect />
                 </div>
@@ -79,8 +81,8 @@ export default function Main() {
                     </div>
 
                     <div className="absolute size-full rounded-3xl overflow-hidden">
-                        <div className="size-96 absolute -top-52 -left-52 rounded-full bg-head-gradient-full blur-3xl"></div>
-                        <div className="size-96 absolute -bottom-52 -right-52 rounded-full bg-head-gradient-full blur-2xl"></div>
+                        <div className="size-96 absolute -top-52 -left-52 rounded-full bg-golnft-gradient-full blur-3xl"></div>
+                        <div className="size-96 absolute -bottom-52 -right-52 rounded-full bg-golnft-gradient-full blur-2xl"></div>
                     </div>
                 </div>
             </header>
@@ -110,7 +112,7 @@ export default function Main() {
                 </AnimatedSection>
 
                 <section
-                    className="max-w-6xl mx-auto py-10 p-4 text-cyber-800"
+                    className="max-w-6xl mx-auto py-10 p-4 pt-16 text-cyber-800"
                     onMouseEnter={() => {
                         setActiveSection("collection");
                     }}
@@ -127,7 +129,7 @@ export default function Main() {
                             Sell All
                         </a>
                     </div>
-                    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-8 p-4 justify-center">
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-4 justify-center">
                         {collection.map((item, i) => (
                             <AnimatedSection id={item.title} key={i}>
                                 <NFTCard {...item} />
@@ -235,13 +237,13 @@ export default function Main() {
                         </div>
 
                         <div className="absolute size-full overflow-hidden">
-                            <div className="size-96 absolute -bottom-52 -left-52 rounded-full bg-head-gradient-full blur-3xl"></div>
-                            <div className="size-96 absolute -top-52 -right-52 rounded-full bg-head-gradient-full blur-2xl"></div>
+                            <div className="size-96 absolute -bottom-52 -left-52 rounded-full bg-golnft-gradient-full blur-3xl"></div>
+                            <div className="size-96 absolute -top-52 -right-52 rounded-full bg-golnft-gradient-full blur-2xl"></div>
                         </div>
                     </section>
                 </AnimatedSection>
             </main>
-            <footer className="border-t bg-cyber-800 border-cyber-500 text-center p-4 text-xs text-gray-200">
+            <footer className="border-t border-cyber-700 bg-cyber-800 text-center p-4 text-xs text-gray-200">
                 &copy 2024
             </footer>
         </div>

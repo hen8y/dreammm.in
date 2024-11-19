@@ -41,7 +41,7 @@ const socialLinks: SocialLink[] = [
 export default function Main()
 {
     return (
-        <main className="min-h-screen w-full text-neutral-300 p-5 md:flex-none pt-7 md:pt-20 sm:px-20 bg-[#090909] bg-column">
+        <main className="min-h-screen w-full text-neutral-300 p-5 md:flex-none pt-7 md:pt-20 sm:px-20 bg-[#090909] bg-main-gradient">
             <div className="max-w-5xl pb-20 sm:pb-5 mx-auto md:flex md:gap-20">
                 <section className="flex flex-col justify-center items-center sm:block">
                     <div className="rounded-full border-2 shadow-lg shadow-blue-400/20 size-32 border-blue-500/10"></div>
