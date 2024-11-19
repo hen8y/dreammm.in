@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+    .space {
+        @apply flex justify-between items-center;
+    }
+
+    .center {
+        @apply flex justify-center items-center;
+    }
+    .hover-prop {
+        @apply transition-all ease-in hover:ease-out delay-100 duration-200
+    }
+}
+.hide-scroll {
+    --ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
