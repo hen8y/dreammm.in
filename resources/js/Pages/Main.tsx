@@ -1,13 +1,12 @@
 import React from "react";
 import MaskedScrollable from "./components/MaskedScrollable";
-import { XIcon, DiscordIcon, MailIcon, TelegramIcon, MoonIcon } from "./components/Icons/Index";
+import { XIcon, DiscordIcon, MailIcon, TelegramIcon, LinkIcon } from "./components/Icons/Index";
 import IconContainer from "./components/IconContainer";
 
 
 interface Project {
     image: string;
     title: string;
-    desc: string;
     link: string;
 }
 
@@ -18,44 +17,18 @@ interface SocialLink {
 
 const recentProjects: Project[] = [
     {
-        image: "/images/project_one.jpg",
+        image: "/images/projects/golnft.png",
         title: "GolNFT",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        link: "/golnft",
-    },
-    {
-        image: "/images/project_one.jpg",
-        title: "another",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        link: "hen8y.me",
-    },
-    {
-        image: "/images/project_one.jpg",
-        title: "another",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        link: "hen8y.me",
-    },
-    {
-        image: "/images/project_one.jpg",
-        title: "another",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        link: "hen8y.me",
-    },
+        link: "golnft",
+    }
 ];
 
 const projects: Project[] = [
     {
-        image: "/images/project_one.jpg",
+        image: "/images/projects/golnft.png",
         title: "another",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         link: "hen8y.me",
-    },
-    {
-        image: "/images/project_one.jpg",
-        title: "another",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        link: "hen8y.me",
-    },
+    }
 ];
 
 const socialLinks: SocialLink[] = [
@@ -68,7 +41,7 @@ const socialLinks: SocialLink[] = [
 export default function Main()
 {
     return (
-        <main className="min-h-screen w-full text-neutral-300 p-5 md:flex-none pt-20 sm:px-20 bg-[#090909] bg-column">
+        <main className="min-h-screen w-full text-neutral-300 p-5 md:flex-none pt-7 md:pt-20 sm:px-20 bg-[#090909] bg-column">
             <div className="max-w-5xl pb-20 sm:pb-5 mx-auto md:flex md:gap-20">
                 <section className="flex flex-col justify-center items-center sm:block">
                     <div className="rounded-full border-2 shadow-lg shadow-blue-400/20 size-32 border-blue-500/10"></div>
@@ -82,17 +55,17 @@ export default function Main()
                 </section>
 
                 <section className="flex-1 min-w-0">
-                    <div className="mt-16 overflow-hidden">
-                        <div className="flex gap-3 items-center justify-center sm:justify-start">
-                            <IconContainer component={MoonIcon} />
-                            <p className="text-2xl font-semibold text-center">Recent Projects</p>
+                    <div className="mt-10 overflow-hidden px-4">
+                        <div className="flex gap-3 items-center ps-5">
+                            <IconContainer component={LinkIcon} />
+                            <p className="text-2xl font-semibold">Recent Projects</p>
                         </div>
                         <MaskedScrollable collection={recentProjects} />
                     </div>
 
-                    <div className="mt-16 overflow-hidden">
-                        <div className="flex gap-3 items-center justify-center sm:justify-start">
-                            <IconContainer component={MoonIcon} />
+                    <div className="mt-10 px-4 overflow-hidden">
+                        <div className="flex gap-3 items-center ps-5">
+                        <IconContainer component={LinkIcon} />
                             <p className="text-2xl font-semibold">Other Projects</p>
                         </div>
                         <MaskedScrollable collection={projects} />

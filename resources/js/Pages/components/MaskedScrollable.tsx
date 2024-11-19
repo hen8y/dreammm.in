@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "@inertiajs/react";
 
 interface CollectionItem {
     image: string;
     title: string;
-    desc: string;
+    link?: string
 }
 
 interface CollectionProps {
@@ -61,31 +62,21 @@ const MaskedScrollable: React.FC<CollectionProps> = ({ collection }) => {
                     {collection.map((item: CollectionItem, i: number) => (
                         <div
                             key={i}
-                            className="w-72 flex-none bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 transition-colors duration-200 rounded-xl shadow-lg"
+                            className="w-64 flex-none bg-neutral-900 border p-3 border-neutral-800 hover:bg-neutral-800/40 hover-prop rounded-2xl shadow-lg"
                         >
-                            <div className="p-3">
-                                <div
-                                    className="h-44 w-full rounded-lg bg-center bg-no-repeat bg-cover"
-                                    style={{
-                                        backgroundImage: `url(${item.image})`,
-                                    }}
-                                />
-                                <div className="px-2 mt-3">
-                                    <h3 className="text-xl font-semibold">
-                                        {item.title}
-                                    </h3>
-                                    <p className="mt-3 text-xs text-neutral-300">
-                                        {item.desc}
-                                    </p>
-                                </div>
-                                <div className="px-2 mt-6">
-                                    <a
-                                        href="#"
-                                        className="inline-block rounded-full text-xs border border-blue-500/20 bg-neutral-800 px-4 py-3 text-blue-400 hover:bg-neutral-700 transition-colors duration-200"
-                                    >
-                                        Visit Project
-                                    </a>
-                                </div>
+                            <img src={item.image} alt={item.title} className="rounded-xl" />
+                            <div className="px-2 mt-3">
+                                <h3 className="text-xl font-semibold">
+                                    {item.title}
+                                </h3>
+                            </div>
+                            <div className="px-2 mt-6">
+                                <Link
+                                    href={item.link ?? '#'}
+                                    className="inline-block rounded-full text-xs border border-blue-500/20 bg-neutral-800 px-4 py-2.5 text-blue-400"
+                                >
+                                    Visit Project
+                                </Link>
                             </div>
                         </div>
                     ))}

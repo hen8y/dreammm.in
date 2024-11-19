@@ -19,3 +19,47 @@
     scrollbar-width: none;
 }
 
+.creator-height {
+    @apply h-[250px];
+}
+
+@media (min-width: 520px) {
+    .creator-height {
+        @apply h-[230px];
+    }
+}
+
+@media (min-width: 573px) {
+    .creator-height {
+        @apply h-[170px];
+    }
+}
+
+@media (min-width: 736px) {
+    .creator-height {
+        @apply h-[110px];
+    }
+}
+
+@media (min-width: 736px) {
+    .creator-height {
+        @apply h-[150px];
+    }
+}
+
+@media (min-width: 771px) {
+    .creator-height {
+        @apply h-[220px];
+    }
+}
+
+@media (min-width: 800px) {
+    .creator-height {
+        @apply h-[150px];
+    }
+}
+
+.hide-scroll {
+    --ms-overflow-style: none;
+    scrollbar-width: none;
+}

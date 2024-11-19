@@ -1,8 +1,8 @@
-import { DiscordIcon } from "./discord";
+import { DiscordIcon } from "./Discord";
 import { XIcon } from "./X";
 import { TelegramIcon } from "./Telegram";
-import { LinkedInIcon } from "./Linkedin";
+import { LinkedInIcon } from "./LinkedIn";
 import { MailIcon } from "./Mail";
-import { MoonIcon } from "./Moon";
+import { LinkIcon } from "./Link";
 
-export { DiscordIcon, XIcon, TelegramIcon, LinkedInIcon, MailIcon, MoonIcon };
+export { DiscordIcon, XIcon, TelegramIcon, LinkedInIcon, MailIcon, LinkIcon };
