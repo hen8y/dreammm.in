@@ -14,10 +14,13 @@
         @apply transition-all ease-in hover:ease-out delay-100 duration-200
     }
 }
-.hide-scroll {
+.hide-scroll{
     --ms-overflow-style: none;
     scrollbar-width: none;
 }
+.in-view {
+    pointer-events: auto;
+  }
 
 .creator-height {
     @apply h-[250px];

@@ -64,7 +64,7 @@ const MaskedScrollable: React.FC<CollectionProps> = ({ collection }) => {
                             key={i}
                             className="w-64 flex-none bg-neutral-900 border p-3 border-neutral-800 hover:bg-neutral-800/40 hover-prop rounded-2xl shadow-lg"
                         >
-                            <img src={item.image} alt={item.title} className="rounded-xl" />
+                            <img src={item.image} alt={item.title} className="rounded-xl w-full"/>
                             <div className="px-2 mt-3">
                                 <h3 className="text-xl font-semibold">
                                     {item.title}

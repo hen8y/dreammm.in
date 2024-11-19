@@ -20,7 +20,7 @@ export default function NFTCard({
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0m7 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0m7 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0"/></svg>
             </div>
             <div className="mt-3">
-                <img src={image} alt={title} className="rounded-2xl" />
+                <img src={image} alt={title} className="rounded-2xl w-full" />
                 <div className="space">
                     <div>
                         <div className="mt-3 text-cyber-700 text-sm font-semibold">{title}</div>
