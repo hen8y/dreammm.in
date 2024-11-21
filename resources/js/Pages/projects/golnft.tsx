@@ -8,7 +8,8 @@ import { data } from "./services/data";
 import { Head } from "@inertiajs/react";
 import AnimatedSection from "../components/AnimatedSection";
 
-export default function Main() {
+export default function Main(): JSX.Element
+{
     const [activeSection, setActiveSection] = useState<string>("golnft");
     const nfts = data.nfts;
     const collection = data.collection;

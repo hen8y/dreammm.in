@@ -20,14 +20,24 @@ const recentProjects: Project[] = [
         image: "/images/projects/golnft.png",
         title: "GolNFT",
         link: "golnft",
+    },
+    {
+        image: "/images/projects/cryeto.png",
+        title: "Cryeto",
+        link: "cryeto",
     }
 ];
 
 const projects: Project[] = [
     {
         image: "/images/projects/golnft.png",
-        title: "another",
-        link: "hen8y.me",
+        title: "GolNFT",
+        link: "golnft",
+    },
+    {
+        image: "/images/projects/cryeto.png",
+        title: "Cryeto",
+        link: "cryeto",
     }
 ];
 
@@ -35,10 +45,10 @@ const socialLinks: SocialLink[] = [
     { component: XIcon, link: "https://x.com/dreammingod" },
     { component: MailIcon, link: "mailto:hen8y@outlook.com" },
     { component: TelegramIcon, link: "https://x.com/dreammingod" },
-    { component: DiscordIcon, link: "https://x.com/dreammingod" },
+    { component: DiscordIcon, link: "https://discord.com/users/961929328214544424" },
 ];
 
-export default function Main()
+export default function Main(): JSX.Element
 {
     return (
         <main className="min-h-screen w-full text-neutral-300 p-5 md:flex-none pt-7 md:pt-20 sm:px-20 bg-[#090909] bg-main-gradient">

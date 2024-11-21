@@ -12,7 +12,8 @@ export default function NFTCard({
     price,
     avatar,
     image
-} : NFTCardType) {
+} : NFTCardType): JSX.Element
+{
     return (
         <div className="border rounded-xl p-3 shadow-sm">
             <div className="space">

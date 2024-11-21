@@ -20,7 +20,8 @@ export default function NavLink({
     activeColor = 'text-cyber-800',
     inactiveColor = 'text-zinc-500',
     handleClick
-}: NavLinkType) {
+}: NavLinkType): JSX.Element
+{
     return (
         <div className="center flex-col text-sm cursor-pointer">
             <Link

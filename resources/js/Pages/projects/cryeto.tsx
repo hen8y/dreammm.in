@@ -1,22 +1,36 @@
 import { Head } from "@inertiajs/react";
 import Navigation from "../components/cryeto/Navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import CryptoGraph from "../components/cryeto/CryptoGraph";
 
-export default function Cryeto() {
-    const [showBg, setShowBg] = useState(false);
+export default function Cryeto(): JSX.Element
+{
+    const [showBg, setShowBg] = useState<boolean>(false);
+    const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768);
+
     const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener("resize", handleResize);
+    })
+
 
     const handleScroll = () => {
         if (containerRef.current) {
             const scrollTop = containerRef.current.scrollTop;
-            setShowBg(scrollTop > 100);
+            const value = isMobile ? 10 : 100;
+            setShowBg(scrollTop > value);
         }
     };
 
     return (
         <div
             ref={containerRef}
-            className="font-kanit max-h-screen text-neutral-400 bg-neutral-950 overflow-y-scroll overflow-x-hidden hide-scroll"
+            className="font-kanit max-h-screen bg-grid text-neutral-400 bg-neutral-950 overflow-y-scroll overflow-x-hidden hide-scroll"
             onScroll={handleScroll}
         >
             <Head title="Cryeto" />
@@ -24,7 +38,7 @@ export default function Cryeto() {
                 <header className="w-full bg-cryeto-gradient">
                     <Navigation showBg={showBg} />
 
-                    <section className="max-w-6xl mx-auto p-4 pt-20 md:pt-40 grid md:grid-cols-2 gap-10 items-center">
+                    <section className="max-w-6xl mx-auto p-4 pt-32 md:pt-40 grid md:grid-cols-2 gap-10 items-center">
                         <div>
                             <p className="font-semibold text-neutral-500 uppercase">keep your money safe !</p>
                             <div className="font-bold text-5xl">
@@ -67,12 +81,10 @@ export default function Cryeto() {
                     </section>
                 </header>
                 <main className="py-16 relative">
-                    <section className=" mx-10 p-4 z-10">
-                        <div className="absolute size-72 blur-2xl bg-cryeto-gradient-full opacity-25 rounded-full z-10 bg-white">
-
+                    <section className="max-w-6xl mx-auto p-4 z-10 relative" id="service">
+                        <div className="p-4 z-10">
+                            <div className="absolute size-72 mt-20 blur-2xl bg-cryeto-gradient-full opacity-25 rounded-full z-10 bg-white" />
                         </div>
-                    </section>
-                    <section className="max-w-6xl mx-auto p-4 z-10 relative">
                         <div className="grid md:grid-cols-2 gap-10">
                             <div className="text-4xl font-semibold">
                                 <span>Your </span> <span className="text-lime-400">trusted </span><span className="text-gradient">partner of crytocurrency.</span>
@@ -82,7 +94,7 @@ export default function Cryeto() {
                             </div>
                         </div>
                         <div className="mt-16 grid sm:grid-cols-3 items-end">
-                            <div className="w-full h-64 border rounded-t-xl sm:rounded-t-none sm:rounded-l-2xl p-4 bg-neutral-950/40 backdrop-blur-3xl border-neutral-800 shadow-md">
+                            <div className="w-full h-64 border rounded-t-xl sm:rounded-tr-none sm:rounded-l-2xl p-4 bg-neutral-800/40 backdrop-blur-2xl border-neutral-800 shadow-md">
                                 <p className="text-lime-400 font-semibold text-xl">01.</p>
                                 <p className="text-neutral-300 leading-5 mt-5 font-semibold text-lg">Services for Any<br />Level of Expertise.</p>
                             </div>
@@ -97,13 +109,48 @@ export default function Cryeto() {
                                 </a>
                             </div>
 
-                            <div className="w-full h-64 border rounded-b-xl sm:rounded-b-none sm:rounded-r-2xl bg-neutral-950/40 p-4 backdrop-blur-3xl border-neutral-800 shadow-md">
+                            <div className="w-full h-64 border rounded-b-xl sm:rounded-bl-none sm:rounded-r-2xl bg-neutral-800/40 p-4 backdrop-blur-2xl border-neutral-800 shadow-md">
                                 <p className="text-lime-400 font-semibold text-xl">03.</p>
                                 <p className="text-neutral-300 leading-5 mt-5 font-semibold text-lg">Protected<br />by insurance.</p>
                             </div>
                         </div>
                     </section>
+
+                    <section className="max-w-6xl mx-auto p-4 mt-10 relative">
+                        <div className="p-4 z-10 w-full">
+                            <div className="absolute size-72 mt-20 blur-2xl bg-cryeto-gradient-full opacity-25 rounded-full z-10 bg-white" />
+                            <div className="absolute -right-32 -top-40 size-72 mt-20 blur-2xl bg-cryeto-gradient-full opacity-25 rounded-full z-10 bg-white" />
+                        </div>
+                        <div className="relative z-10 grid md:grid-cols-2" >
+                            {/* <CryptoGraph /> */}
+                            <div id="stats" />
+                            <div id="ask-question">
+                               <div className="text-4xl font-semibold max-w-sm">
+                                    <span className="text-gradient">Trusted </span>
+                                    <span className="text-lime-400">platform </span>
+                                    <span className="text-gradient">anytime & anywhere.</span>
+                               </div>
+                                <div className="text-xs tracking-[0.5em] mr-1 mt-4">★ ★ ★ ★</div>
+                                <div className="text-sm text-neutral-500 mt-4">
+                                    This is a unites and secures a <span className="text-neutral-200">growing ecosystem</span> of specialized blockchains called parachains. Apps and services om Polkadot can ecosystem of specialized called.
+                                </div>
+                                <div className="text-sm text-neutral-500 mt-4">
+                                    Polkadot <span className="text-neutral-200">unites and secures a growing ecosvstem</span> of specialized blockchains called parachains. Apps and services
+                                </div>
+                                <div className="flex items-center gap-5 mt-10">
+                                    <a href="" className="inline-flex items-center gap-1 rounded-lg px-6 p-2 text-sm text-black font-semibold bg-lime-400">
+                                        Learn more 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="m15.06 5.283l5.657 5.657a1.5 1.5 0 0 1 0 2.12l-5.656 5.658a1.5 1.5 0 0 1-2.122-2.122l3.096-3.096H4.5a1.5 1.5 0 0 1 0-3h11.535L12.94 7.404a1.5 1.5 0 0 1 2.122-2.121Z"/></g></svg>
+                                    </a>
+                                    <p className="text-neutral-500">Ask question ?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </main>
+                <footer className="border-t text-center p-4 text-xs border-neutral-700 mt-10">
+                    &copy 2024
+                </footer>
             </div>
         </div>
     );

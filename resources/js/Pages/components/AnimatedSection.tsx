@@ -10,7 +10,8 @@ interface AnimatedSectionProps {
 export default function AnimatedSection({
     id,
     children,
-}: AnimatedSectionProps) {
+}: AnimatedSectionProps): JSX.Element
+{
     const [hasAnimated, setHasAnimated] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 

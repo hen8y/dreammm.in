@@ -9,10 +9,11 @@ interface NavigationProps {
 export default function Navigation({
     activeSection,
     setActiveSection
-}: NavigationProps) {
-    const [isOpen, setIsOpen] = useState(false);
+}: NavigationProps): JSX.Element
+{
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
-    const toggleMenu = (section?:string|null) => {
+    const toggleMenu = (section?: string|null) => {
         setIsOpen(!isOpen);
         if(section) setActiveSection(section);
     };

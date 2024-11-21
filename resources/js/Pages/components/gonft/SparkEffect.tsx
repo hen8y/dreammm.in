@@ -1,4 +1,5 @@
-export default function SparkEffect() {
+export default function SparkEffect(): JSX.Element
+{
     return (
         <>
             <div className="absolute -top-14 space flex-col opacity-50 h-96 w-32">

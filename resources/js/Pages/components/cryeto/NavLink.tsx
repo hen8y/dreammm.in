@@ -12,9 +12,10 @@ export default function NavLink({
     link,
     className,
     handleClick
-}: NavLinkType) {
+}: NavLinkType): JSX.Element
+{
     return (
-        <div className="center flex-col text-sm cursor-pointer">
+        <div className="text-sm cursor-pointer">
             <Link
                 to={link ?? ''}
                 smooth={true}

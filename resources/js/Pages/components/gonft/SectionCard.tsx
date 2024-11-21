@@ -16,7 +16,8 @@ export default function SectionCard({
     avatar,
     price,
     time
-} : SectionCardType) {
+} : SectionCardType): JSX.Element
+{
     return (
         <div className={`rounded-3xl w-60 shrink-0 p-3 bg-white ${className}`}>
             <img src={image} alt={title} className="rounded-3xl" />
